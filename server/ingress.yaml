@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: canteen-ingress
+  namespace: ge64zoh-devops25
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: "ge64zoh-devops25.student.k8s.aet.cit.tum.de"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: canteen-service
+                port:
+                  number: 8080

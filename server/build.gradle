@@ -8,12 +8,6 @@ plugins {
 group = 'de.tum.aet.devops25'
 version = '0.0.1'
 
-jib {
-	to {
-		image = 'ghcr.io/aet-devops25/w05-template/server:latest'
-	}
-}
-
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
@@ -22,6 +16,12 @@ java {
 
 repositories {
 	mavenCentral()
+}
+
+jib {
+	to {
+		image = 'ghcr.io/aet-devops25/w05-template/server:latest'
+	}
 }
 
 dependencies {

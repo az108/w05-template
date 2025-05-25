@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: canteen
+  namespace: ge64zoh-devops25
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: canteen
+  template:
+    metadata:
+      labels:
+        app: canteen
+    spec:
+      containers:
+        - name: canteen
+          image: docker.io/az108/canteen-app:latest
+          ports:
+            - containerPort: 8080
