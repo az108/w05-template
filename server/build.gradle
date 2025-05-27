@@ -20,7 +20,7 @@ repositories {
 
 jib {
 	to {
-		image = 'ghcr.io/aet-devops25/w05-template/server:latest'
+		image = 'docker.io/aet-devops25/w05-template/server:latest'
 	}
 }
 
